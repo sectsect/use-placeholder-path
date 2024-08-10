@@ -5,6 +5,7 @@
  *
  * @remarks
  * This hook supports URL-encoded characters (e.g. Japanese) in the path.
+ * It ignores query parameters in the URL.
  *
  * @example
  * // For a route like '/users/123/posts/456'

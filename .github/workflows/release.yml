@@ -23,6 +23,22 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Build Packages
+        run: npm run build
+
+      - name: Run Tests
+        run: npm run test
+
+      - name: Run Test Coverage
+        run: npm run test:coverage
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        with:
+          files: ./coverage/lcov.info
+
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
