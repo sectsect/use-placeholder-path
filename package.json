@@ -1,6 +1,6 @@
 {
   "name": "@sect/use-placeholder-path",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A custom React hook to retrieve placeholder path in Next.js App Router.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -15,7 +15,8 @@
     "type-check:watch": "npm run type-check -- --watch",
     "test": "",
     "prepare": "husky",
-    "changeset": "changeset"
+    "changeset": "changeset",
+    "release": "npm run build && changeset publish"
   },
   "publishConfig": {
     "access": "public"
