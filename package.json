@@ -14,7 +14,8 @@
     "type-check": "tsc --noEmit --pretty",
     "type-check:watch": "npm run type-check -- --watch",
     "test": "",
-    "prepare": "husky"
+    "prepare": "husky",
+    "changeset": "changeset"
   },
   "publishConfig": {
     "access": "public"
@@ -37,6 +38,8 @@
     "react": "^18.3.1"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.7",
     "@secretlint/secretlint-rule-preset-recommend": "^8.2.4",
     "@tanstack/eslint-plugin-query": "^5.20.1",
     "@types/react": "^18.3.3",
