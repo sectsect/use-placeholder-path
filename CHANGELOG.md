@@ -1,5 +1,11 @@
 # @sect/use-placeholder-path
 
+## 1.1.1
+
+### Patch Changes
+
+- [#6](https://github.com/sectsect/use-placeholder-path/pull/6) [`643ec0a`](https://github.com/sectsect/use-placeholder-path/commit/643ec0ac4f5cdf24298716c8c6244c54145c56cb) Thanks [@sectsect](https://github.com/sectsect)! - add status badges
+
 ## 1.1.0
 
 ### Minor Changes
