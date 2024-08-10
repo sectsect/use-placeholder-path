@@ -1,5 +1,14 @@
 # @sect/use-placeholder-path
 
+## 1.1.2
+
+### Patch Changes
+
+- [#8](https://github.com/sectsect/use-placeholder-path/pull/8) [`b992a9f`](https://github.com/sectsect/use-placeholder-path/commit/b992a9f1f1c1a1212a55dbe9234fcc5dc6b95be2) Thanks [@sectsect](https://github.com/sectsect)! - ...
+
+  - chore: update dependencies
+  - docs: update README.md
+
 ## 1.1.1
 
 ### Patch Changes
