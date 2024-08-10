@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# @sect/use-placeholder-path
 
-## Getting Started
+A custom React hook to retrieve placeholder path in Next.js App Router.
 
-First, run the development server:
+## Why
+
+Next.js 13+ App Router does NOT have a method to return the path of placeholder value like `useRouter().pathname` in Pages Router.  
+This hook allows you to get the path of a placeholder value, such as `useRouter().pathname` in Pages Router, on the Next.js App Router.
+
+## Installation
 
 ```bash
-npm run dev
+npm install @sect/use-placeholder-path
 # or
-yarn dev
+yarn add @sect/use-placeholder-path
 # or
-pnpm dev
-# or
-bun dev
+pnpm add @sect/use-placeholder-path
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```typescript
+import usePlaceholderPath from '@sect/use-placeholder-path';
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+const MyComponent = () => {
+  const placeholderPath = usePlaceholderPath();
+  
+  return (
+    <div>
+      <p>Current placeholder path: {placeholderPath}</p>
+    </div>
+  );
+}
 
-## Learn More
+export default MyComponent;
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Examples
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. For a route like `/users/123/posts/456` with params `{ userId: '123', postId: '456' }`:
+   - `placeholderPath` will be `/users/[userId]/posts/[postId]`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+2. For a catch-all route like `/blog/2024/08/15` with params `{ slug: ['2024', '08', '15'] }`:
+   - `placeholderPath` will be `/blog/[...slug]`

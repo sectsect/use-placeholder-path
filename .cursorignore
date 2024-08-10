@@ -1,0 +1,85 @@
+# Node.js
+node_modules/
+.next/
+out/
+.env
+.env.*
+
+# Build
+build/
+dist/
+.cache/
+
+# Editors
+.vscode/
+.idea/
+
+# Logs
+*.log
+**/*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Caches
+.next/cache/
+
+# Tests
+coverage/
+*.spec.js
+*.test.js
+
+# WordPress
+public/wp-admin/
+public/wp-includes/
+public/wp-content/uploads/
+public/wp-config.php
+
+# Composer
+vendor/
+**/vendor/
+composer.lock
+
+# Config Files
+**/*.config
+**/*.conf
+**/*.env
+local-xdebuginfo.php
+
+# SQL
+*.sql
+**/*.sql
+
+# CSV
+*.csv
+**/*.csv
+
+# Docker
+.docker/
+
+# Husky
+.husky/
+
+# Code Deploy
+/code-deploy/
+
+# Node Version
+.node-version
+
+# Next-sitemap
+nextjs/public/sitemap.xml
+nextjs/public/server-sitemap.xml
+nextjs/public/sitemap-*
+
+# Sandbox
+/sandbox/
+
+# MacOS
+._*
+.Spotlight-V100
+.Trashes
+
+# Other
+*.md
+LICENSE

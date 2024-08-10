@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "mikestead.dotenv",
+    "blanu.vscode-styled-jsx",
+    "stylelint.vscode-stylelint",
+    "bradlc.vscode-tailwindcss",
+    "austenc.tailwind-docs",
+    "petermekhaeil.vscode-tailwindcss-explorer",
+    "dsznajder.es7-react-js-snippets",
+    "vitest.explorer",
+    "ValeryanM.vscode-phpsab"
+  ]
+}
