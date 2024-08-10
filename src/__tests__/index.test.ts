@@ -15,6 +15,14 @@ describe('usePlaceholderPath', () => {
     vi.resetAllMocks();
   });
 
+  test('should return an empty string when pathname is empty string', () => {
+    vi.mocked(usePathname).mockReturnValue('');
+    vi.mocked(useParams).mockReturnValue({});
+
+    const { result } = renderHook(() => usePlaceholderPath());
+    expect(result.current).toBe('');
+  });
+
   test('should handle a simple path without parameters', () => {
     vi.mocked(usePathname).mockReturnValue('/about');
     vi.mocked(useParams).mockReturnValue({});
