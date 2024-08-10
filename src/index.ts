@@ -7,6 +7,7 @@ import { usePathname, useParams } from 'next/navigation';
  *
  * @remarks
  * This hook supports URL-encoded characters (e.g. Japanese) in the path.
+ * It ignores query parameters in the URL.
  *
  * @example
  * // For a route like '/users/123/posts/456'
@@ -28,7 +29,9 @@ const usePlaceholderPath = (): string => {
     return '';
   }
 
-  const decodedPathname = decodeURIComponent(pathname);
+  // Remove query parameters if present
+  const pathWithoutQuery = pathname.split('?')[0];
+  const decodedPathname = decodeURIComponent(pathWithoutQuery);
   const segments = decodedPathname.split('/').filter(Boolean);
 
   // Replace parameters with placeholders

@@ -30,7 +30,8 @@ var usePlaceholderPath = () => {
   if (!pathname) {
     return "";
   }
-  const decodedPathname = decodeURIComponent(pathname);
+  const pathWithoutQuery = pathname.split("?")[0];
+  const decodedPathname = decodeURIComponent(pathWithoutQuery);
   const segments = decodedPathname.split("/").filter(Boolean);
   Object.entries(params).forEach(([key, value]) => {
     if (Array.isArray(value)) {
