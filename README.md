@@ -1,5 +1,7 @@
 # @sect/use-placeholder-path
 
+[![Release](https://github.com/sectsect/use-placeholder-path/actions/workflows/release.yml/badge.svg)](https://github.com/sectsect/use-placeholder-path/actions/workflows/release.yml) [![codecov](https://codecov.io/gh/sectsect/use-placeholder-path/graph/badge.svg?token=WsgZ81CmzZ)](https://codecov.io/gh/sectsect/use-placeholder-path) [![CodeQL](https://github.com/sectsect/use-placeholder-path/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/sectsect/use-placeholder-path/actions/workflows/github-code-scanning/codeql) [![npm version](https://badge.fury.io/js/@sect%2Fuse-placeholder-path.svg)](https://badge.fury.io/js/@sect%2Fuse-placeholder-path) ![NPM](https://img.shields.io/npm/l/@sect/use-placeholder-path)
+
 A custom React hook to retrieve placeholder path in Next.js App Router.
 
 ## Why
