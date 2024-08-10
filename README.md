@@ -23,6 +23,8 @@ pnpm add @sect/use-placeholder-path
 ## Usage
 
 ```typescript
+'use client';
+
 import usePlaceholderPath from '@sect/use-placeholder-path';
 
 const MyComponent = () => {
@@ -45,6 +47,10 @@ export default MyComponent;
 
 2. For a catch-all route like `/blog/2024/08/15` with params `{ slug: ['2024', '08', '15'] }`:
    - `placeholderPath` will be `/blog/[...slug]`
+
+## Notes
+
+- `usePlaceholderPath` requires using a [Client Component](https://nextjs.org/docs/app/building-your-application/rendering/client-components).
 
 ## Changelog 
 
