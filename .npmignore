@@ -2,6 +2,7 @@
 /src
 /public
 /.vscode
+/src/__tests__
 
 .env
 
