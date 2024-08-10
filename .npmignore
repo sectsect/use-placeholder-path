@@ -14,6 +14,9 @@ tsup.config.ts
 postcss.config.mjs
 .eslintrc
 .eslintignore
-prettier.config.js
+.prettierrc.json
 .prettierignore
 .secretlintrc.json
+.lintstagedrc.json
+
+LICENSE
