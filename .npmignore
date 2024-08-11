@@ -19,5 +19,3 @@ postcss.config.mjs
 .secretlintrc.json
 .lintstagedrc.json
 commitlint.config.mjs
-
-LICENSE
