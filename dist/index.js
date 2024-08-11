@@ -3,30 +3,17 @@ import { usePathname, useParams } from "next/navigation";
 var usePlaceholderPath = () => {
   const pathname = usePathname();
   const params = useParams();
-  if (!pathname) {
-    return "";
-  }
-  const pathWithoutQuery = pathname.split("?")[0];
-  const decodedPathname = decodeURIComponent(pathWithoutQuery);
-  const segments = decodedPathname.split("/").filter(Boolean);
+  if (!pathname) return "";
+  const segments = decodeURIComponent(pathname.split("?")[0]).split("/").filter(Boolean);
   Object.entries(params).forEach(([key, value]) => {
-    if (Array.isArray(value)) {
-      const placeholder = `[...${key}]`;
-      const decodedValues = value.map(decodeURIComponent);
-      const startIndex = segments.findIndex(
-        (segment) => segment === decodedValues[0]
-      );
-      if (startIndex !== -1) {
-        segments.splice(startIndex, decodedValues.length, placeholder);
-      }
-    } else if (typeof value === "string") {
-      const decodedValue = decodeURIComponent(value);
-      const replaceIndex = segments.findIndex(
-        (segment) => segment === decodedValue
-      );
-      if (replaceIndex !== -1) {
-        segments[replaceIndex] = `[${key}]`;
-      }
+    const placeholder = Array.isArray(value) ? `[...${key}]` : `[${key}]`;
+    const values = Array.isArray(value) ? value : [value];
+    const decodedValues = values.map(decodeURIComponent);
+    const startIndex = segments.findIndex(
+      (segment) => decodedValues.includes(segment)
+    );
+    if (startIndex !== -1) {
+      segments.splice(startIndex, decodedValues.length, placeholder);
     }
   });
   return `/${segments.join("/")}`;

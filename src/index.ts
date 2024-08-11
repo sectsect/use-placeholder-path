@@ -1,60 +1,29 @@
 import { usePathname, useParams } from 'next/navigation';
 
 /**
- * A custom React hook for retrieve placeholder path in Next.js App Router.
- *
+ * A custom React hook to retrieve placeholder path in Next.js App Router.
  * @returns The placeholder path with dynamic segments replaced by their parameter names.
- *
- * @remarks
- * This hook supports URL-encoded characters (e.g. Japanese) in the path.
- * It ignores query parameters in the URL.
- *
- * @example
- * // For a route like '/users/123/posts/456'
- * // with params \{ userId: '123', postId: '456' \}
- * const placeholderPath = usePlaceholderPath();
- * // placeholderPath will be '/users/[userId]/posts/[postId]'
- *
- * @example
- * // For a catch-all route like '/blog/2023/03/15'
- * // with params \{ slug: ['2023', '03', '15'] \}
- * const placeholderPath = usePlaceholderPath();
- * // placeholderPath will be '/blog/[...slug]'
  */
-const usePlaceholderPath = (): string => {
+const usePlaceholderPath = () => {
   const pathname = usePathname();
   const params = useParams();
 
-  if (!pathname) {
-    return '';
-  }
+  if (!pathname) return '';
 
-  // Remove query parameters if present
-  const pathWithoutQuery = pathname.split('?')[0];
-  const decodedPathname = decodeURIComponent(pathWithoutQuery);
-  const segments = decodedPathname.split('/').filter(Boolean);
+  const segments = decodeURIComponent(pathname.split('?')[0])
+    .split('/')
+    .filter(Boolean);
 
-  // Replace parameters with placeholders
   Object.entries(params).forEach(([key, value]) => {
-    if (Array.isArray(value)) {
-      // Handle catch-all routes
-      const placeholder = `[...${key}]`;
-      const decodedValues = value.map(decodeURIComponent);
-      const startIndex = segments.findIndex(
-        segment => segment === decodedValues[0],
-      );
-      if (startIndex !== -1) {
-        segments.splice(startIndex, decodedValues.length, placeholder);
-      }
-    } else if (typeof value === 'string') {
-      // Handle regular dynamic routes
-      const decodedValue = decodeURIComponent(value);
-      const replaceIndex = segments.findIndex(
-        segment => segment === decodedValue,
-      );
-      if (replaceIndex !== -1) {
-        segments[replaceIndex] = `[${key}]`;
-      }
+    const placeholder = Array.isArray(value) ? `[...${key}]` : `[${key}]`;
+    const values = Array.isArray(value) ? value : [value];
+    const decodedValues = values.map(decodeURIComponent);
+
+    const startIndex = segments.findIndex(segment =>
+      decodedValues.includes(segment),
+    );
+    if (startIndex !== -1) {
+      segments.splice(startIndex, decodedValues.length, placeholder);
     }
   });
 
