@@ -75,4 +75,12 @@ describe('usePlaceholderPath', () => {
     const { result } = renderHook(() => usePlaceholderPath());
     expect(result.current).toBe('/search');
   });
+
+  test('should handle paths with repeated parameter values', () => {
+    vi.mocked(usePathname).mockReturnValue('/users/123/posts/123');
+    vi.mocked(useParams).mockReturnValue({ userId: '123', postId: '123' });
+
+    const { result } = renderHook(() => usePlaceholderPath());
+    expect(result.current).toBe('/users/[userId]/posts/[postId]');
+  });
 });
