@@ -1,5 +1,13 @@
 # @sect/use-placeholder-path
 
+## 1.1.3
+
+### Patch Changes
+
+- [#10](https://github.com/sectsect/use-placeholder-path/pull/10) [`6c6ab0b`](https://github.com/sectsect/use-placeholder-path/commit/6c6ab0b7e6d6f9c4f682b1d2d92158386805fb30) Thanks [@sectsect](https://github.com/sectsect)! - .
+
+  - chore: add commitlint
+
 ## 1.1.2
 
 ### Patch Changes
