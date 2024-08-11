@@ -1,5 +1,16 @@
 # @sect/use-placeholder-path
 
+## 1.2.1
+
+### Patch Changes
+
+- [#18](https://github.com/sectsect/use-placeholder-path/pull/18) [`3f61379`](https://github.com/sectsect/use-placeholder-path/commit/3f613796f9da34b57676081806f1649aa8dcf620) Thanks [@sectsect](https://github.com/sectsect)! - .
+
+  - chore: add missing build files
+  - chore: update .gitignore
+  - chore: remove dist files from Git scope
+  - chore: update .npmignore
+
 ## 1.2.0
 
 ### Minor Changes
