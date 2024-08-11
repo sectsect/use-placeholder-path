@@ -1,5 +1,15 @@
 # @sect/use-placeholder-path
 
+## 1.1.4
+
+### Patch Changes
+
+- [#12](https://github.com/sectsect/use-placeholder-path/pull/12) [`4b08766`](https://github.com/sectsect/use-placeholder-path/commit/4b0876673dcdaba5c04bd3268de1d6571cf3f3c2) Thanks [@sectsect](https://github.com/sectsect)! - .
+
+  - chore: remove unwanted package
+  - chore: add package `tsc-files`
+  - refactor: code refactor
+
 ## 1.1.3
 
 ### Patch Changes
