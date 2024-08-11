@@ -1,5 +1,14 @@
 # @sect/use-placeholder-path
 
+## 1.2.0
+
+### Minor Changes
+
+- [#16](https://github.com/sectsect/use-placeholder-path/pull/16) [`8a3e6eb`](https://github.com/sectsect/use-placeholder-path/commit/8a3e6eb96742fb164a68ca59a06a8472bab90eb6) Thanks [@sectsect](https://github.com/sectsect)! - .
+
+  - feat: add support for 'Optional Catch-all Segments'
+  - refactor: code refactor
+
 ## 1.1.5
 
 ### Patch Changes
