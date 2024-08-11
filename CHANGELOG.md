@@ -1,5 +1,12 @@
 # @sect/use-placeholder-path
 
+## 1.1.5
+
+### Patch Changes
+
+- [#14](https://github.com/sectsect/use-placeholder-path/pull/14) [`60b225c`](https://github.com/sectsect/use-placeholder-path/commit/60b225c126cdb22ac2f714468644f4cdf0406b12) Thanks [@sectsect](https://github.com/sectsect)! - .
+  test: add a test
+
 ## 1.1.4
 
 ### Patch Changes
