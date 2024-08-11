@@ -83,4 +83,42 @@ describe('usePlaceholderPath', () => {
     const { result } = renderHook(() => usePlaceholderPath());
     expect(result.current).toBe('/users/[userId]/posts/[postId]');
   });
+
+  test('should handle optional catch-all segments with no values', () => {
+    vi.mocked(usePathname).mockReturnValue('/shop');
+    vi.mocked(useParams).mockReturnValue({});
+
+    const { result } = renderHook(() => usePlaceholderPath());
+    expect(result.current).toBe('/shop');
+  });
+
+  test('should handle optional catch-all segments with one value', () => {
+    vi.mocked(usePathname).mockReturnValue('/shop/category');
+    vi.mocked(useParams).mockReturnValue({
+      __OPTIONAL_CATCH_ALL__slug: ['category'],
+    });
+
+    const { result } = renderHook(() => usePlaceholderPath());
+    expect(result.current).toBe('/shop/[[...slug]]');
+  });
+
+  test('should handle optional catch-all segments with two values', () => {
+    vi.mocked(usePathname).mockReturnValue('/shop/category/product');
+    vi.mocked(useParams).mockReturnValue({
+      __OPTIONAL_CATCH_ALL__slug: ['category', 'product'],
+    });
+
+    const { result } = renderHook(() => usePlaceholderPath());
+    expect(result.current).toBe('/shop/[[...slug]]');
+  });
+
+  test('should handle optional catch-all segments with three values', () => {
+    vi.mocked(usePathname).mockReturnValue('/shop/category/product/variant');
+    vi.mocked(useParams).mockReturnValue({
+      __OPTIONAL_CATCH_ALL__slug: ['category', 'product', 'variant'],
+    });
+
+    const { result } = renderHook(() => usePlaceholderPath());
+    expect(result.current).toBe('/shop/[[...slug]]');
+  });
 });
