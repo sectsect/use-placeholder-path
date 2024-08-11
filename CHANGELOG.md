@@ -1,5 +1,49 @@
 # @sect/use-placeholder-path
 
+## 1.1.4
+
+### Patch Changes
+
+- [#12](https://github.com/sectsect/use-placeholder-path/pull/12) [`4b08766`](https://github.com/sectsect/use-placeholder-path/commit/4b0876673dcdaba5c04bd3268de1d6571cf3f3c2) Thanks [@sectsect](https://github.com/sectsect)! - .
+
+  - chore: remove unwanted package
+  - chore: add package `tsc-files`
+  - refactor: code refactor
+
+## 1.1.3
+
+### Patch Changes
+
+- [#10](https://github.com/sectsect/use-placeholder-path/pull/10) [`6c6ab0b`](https://github.com/sectsect/use-placeholder-path/commit/6c6ab0b7e6d6f9c4f682b1d2d92158386805fb30) Thanks [@sectsect](https://github.com/sectsect)! - .
+
+  - chore: add commitlint
+
+## 1.1.2
+
+### Patch Changes
+
+- [#8](https://github.com/sectsect/use-placeholder-path/pull/8) [`b992a9f`](https://github.com/sectsect/use-placeholder-path/commit/b992a9f1f1c1a1212a55dbe9234fcc5dc6b95be2) Thanks [@sectsect](https://github.com/sectsect)! - ...
+
+  - chore: update dependencies
+  - docs: update README.md
+
+## 1.1.1
+
+### Patch Changes
+
+- [#6](https://github.com/sectsect/use-placeholder-path/pull/6) [`643ec0a`](https://github.com/sectsect/use-placeholder-path/commit/643ec0ac4f5cdf24298716c8c6244c54145c56cb) Thanks [@sectsect](https://github.com/sectsect)! - add status badges
+
+## 1.1.0
+
+### Minor Changes
+
+- [#4](https://github.com/sectsect/use-placeholder-path/pull/4) [`634a523`](https://github.com/sectsect/use-placeholder-path/commit/634a52384c66231ee31d3db0ac18cc87911d796d) Thanks [@sectsect](https://github.com/sectsect)! - add testing
+
+  - test: add integration tests
+  - fix: fix handling for query params
+  - test: add a test
+  - build: update ci workflow
+
 ## 1.0.0
 
 ### Major Changes
