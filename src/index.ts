@@ -15,7 +15,19 @@ const usePlaceholderPath = () => {
     .filter(Boolean);
 
   Object.entries(params).forEach(([key, value]) => {
-    const placeholder = Array.isArray(value) ? `[...${key}]` : `[${key}]`;
+    let placeholder: string;
+    if (key.startsWith('__OPTIONAL_CATCH_ALL__')) {
+      // Optional catch-all segments
+      const segmentName = key.replace('__OPTIONAL_CATCH_ALL__', '');
+      placeholder = `[[...${segmentName}]]`;
+    } else if (Array.isArray(value)) {
+      // Regular catch-all segments
+      placeholder = `[...${key}]`;
+    } else {
+      // Regular dynamic segments
+      placeholder = `[${key}]`;
+    }
+
     const values = Array.isArray(value) ? value : [value];
     const decodedValues = values.map(decodeURIComponent);
 
