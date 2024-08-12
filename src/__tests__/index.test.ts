@@ -121,4 +121,35 @@ describe('usePlaceholderPath', () => {
     const { result } = renderHook(() => usePlaceholderPath());
     expect(result.current).toBe('/shop/[[...slug]]');
   });
+
+  test('should handle top-level optional catch-all segments with custom name', () => {
+    vi.mocked(usePathname).mockReturnValue('/blog');
+    vi.mocked(useParams).mockReturnValue({});
+
+    const { result } = renderHook(() =>
+      usePlaceholderPath({ optionalCatchAllSegments: 'customSlug' }),
+    );
+
+    expect(result.current).toBe('/blog/[[...customSlug]]');
+  });
+
+  test('should handle top-level optional catch-all segments with empty string', () => {
+    vi.mocked(usePathname).mockReturnValue('/blog');
+    vi.mocked(useParams).mockReturnValue({});
+
+    const { result } = renderHook(() =>
+      usePlaceholderPath({ optionalCatchAllSegments: '' }),
+    );
+
+    expect(result.current).toBe('/blog/[[...slug]]');
+  });
+
+  test('should not handle top-level optional catch-all segments when not specified', () => {
+    vi.mocked(usePathname).mockReturnValue('/blog');
+    vi.mocked(useParams).mockReturnValue({});
+
+    const { result } = renderHook(() => usePlaceholderPath());
+
+    expect(result.current).toBe('/blog');
+  });
 });

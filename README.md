@@ -2,13 +2,11 @@
 
 [![Release](https://github.com/sectsect/use-placeholder-path/actions/workflows/release.yml/badge.svg)](https://github.com/sectsect/use-placeholder-path/actions/workflows/release.yml) [![codecov](https://codecov.io/gh/sectsect/use-placeholder-path/graph/badge.svg?token=WsgZ81CmzZ)](https://codecov.io/gh/sectsect/use-placeholder-path) [![CodeQL](https://github.com/sectsect/use-placeholder-path/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/sectsect/use-placeholder-path/actions/workflows/github-code-scanning/codeql) [![npm version](https://badge.fury.io/js/@sect%2Fuse-placeholder-path.svg)](https://badge.fury.io/js/@sect%2Fuse-placeholder-path) ![NPM](https://img.shields.io/npm/l/@sect/use-placeholder-path)
 
-A custom React hook to retrieve placeholder path in Next.js App Router.
+A custom React hook to retrieve placeholder paths in Next.js App Router.
 
-## Why
+## Why Use This Hook?
 
-Next.js 13+ App Router does NOT have a method to return the path of placeholder value like `useRouter().pathname` in Pages Router.  
-
-This hook allows you to get the path of a placeholder value, such as `useRouter().pathname` in Pages Router, on the Next.js App Router.
+Next.js 13+ App Router doesn't provide a built-in method to return the path of placeholder values, unlike `router.pathname` in Pages Router. This hook fills that gap, allowing you to get the placeholder path in the App Router, similar to how you would in the Pages Router.
 
 ## Installation
 
@@ -40,17 +38,48 @@ const MyComponent = () => {
 export default MyComponent;
 ```
 
+## API
+
+```typescript
+usePlaceholderPath(options?: UsePlaceholderPathOptions): string
+
+interface UsePlaceholderPathOptions {
+  optionalCatchAllSegments?: string;
+}
+```
+
+- `optionalCatchAllSegments`: (optional) The name of the optional catch-all segment. If provided, enables handling of top-level optional catch-all segments.
+
 ## Examples
 
-1. For a route like `/users/123/posts/456` with params `{ userId: '123', postId: '456' }`:
-   - `placeholderPath` will be `/users/[userId]/posts/[postId]`
+1. Route: `/users/123/posts/456`
+  - Result: `/users/[userId]/posts/[postId]`
 
-2. For a catch-all route like `/blog/2024/08/15` with params `{ slug: ['2024', '08', '15'] }`:
-   - `placeholderPath` will be `/blog/[...slug]`
+2. Catch-all route: `/blog/2024/08/15`
+  - Result: `/blog/[...slug]`
 
 ## Notes
 
-- `usePlaceholderPath` requires using a [Client Component](https://nextjs.org/docs/app/building-your-application/rendering/client-components).
+- `usePlaceholderPath` requires the use of a [Client Component](https://nextjs.org/docs/app/building-your-application/rendering/client-components).
+
+## Known Issues
+
+### Detecting Top-Level Optional Catch-all Segments
+
+Top-Level Optional Catch-all Segments are expected to return `/folderName/[[...segmentName]]`, but currently `/folderName` is returned.
+
+- Expected: `/shop/[[...slug]]`
+- Actual: `/shop`
+
+This is due to the technical limitations in detecting Top-Level Optional Catch-all Segments in the Next.js App Router.
+
+To address this limitation, we've introduced an optional configuration:
+
+```typescript
+const placeholderPath = usePlaceholderPath({
+  optionalCatchAllSegments: 'slug'
+});
+```
 
 ## Changelog 
 

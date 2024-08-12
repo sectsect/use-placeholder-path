@@ -1,13 +1,16 @@
 import { usePathname, useParams } from 'next/navigation';
 
+interface UsePlaceholderPathOptions {
+  optionalCatchAllSegments?: string;
+}
+
 /**
  * Decodes and splits a pathname into segments.
  * @param pathname - The URL pathname to decode and split.
  * @returns An array of decoded path segments, excluding empty segments.
  */
-const getDecodedPathSegments = (pathname: string): string[] => {
-  return decodeURIComponent(pathname.split('?')[0]).split('/').filter(Boolean);
-};
+const decodePathSegments = (pathname: string): string[] =>
+  decodeURIComponent(pathname.split('?')[0]).split('/').filter(Boolean);
 
 /**
  * Generates a placeholder string for dynamic route segments.
@@ -20,10 +23,7 @@ const getPlaceholder = (key: string, value: string | string[]): string => {
     const segmentName = key.replace('__OPTIONAL_CATCH_ALL__', '');
     return `[[...${segmentName}]]`;
   }
-  if (Array.isArray(value)) {
-    return `[...${key}]`;
-  }
-  return `[${key}]`;
+  return Array.isArray(value) ? `[...${key}]` : `[${key}]`;
 };
 
 /**
@@ -57,16 +57,30 @@ const replaceDynamicSegments = (
 
 /**
  * A custom React hook to retrieve placeholder path in Next.js App Router.
+ * @param options - Configuration options for the hook.
+ *        optionalCatchAllSegments - The name of the optional catch-all segment. If provided, enables handling of top-level optional catch-all segments.
  * @returns The placeholder path with dynamic segments replaced by their parameter names.
  */
-const usePlaceholderPath = () => {
+const usePlaceholderPath = (options: UsePlaceholderPathOptions = {}) => {
   const pathname = usePathname();
   const params = useParams();
 
   if (!pathname) return '';
 
-  const segments = getDecodedPathSegments(pathname);
+  const segments = decodePathSegments(pathname);
   const placeholderSegments = replaceDynamicSegments(segments, params);
+
+  const { optionalCatchAllSegments } = options;
+  const isTopLevelOptionalCatchAll =
+    optionalCatchAllSegments !== undefined &&
+    Object.keys(params).length === 0 &&
+    segments.length === 1;
+
+  // Handle top-level optional catch-all segments
+  if (isTopLevelOptionalCatchAll) {
+    const catchAllSegment = optionalCatchAllSegments || 'slug'; // Use 'slug' as default if empty string
+    return `/${segments[0]}/[[...${catchAllSegment}]]`;
+  }
 
   return `/${placeholderSegments.join('/')}`;
 };
