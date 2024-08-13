@@ -1,5 +1,13 @@
 # @sect/use-placeholder-path
 
+## 1.3.0
+
+### Minor Changes
+
+- [#20](https://github.com/sectsect/use-placeholder-path/pull/20) [`cb76a59`](https://github.com/sectsect/use-placeholder-path/commit/cb76a596b6791e78981b23164ca2f76d13cfd1ca) Thanks [@sectsect](https://github.com/sectsect)! - .
+
+  - feat: add support for Top-Level path in 'Optional Catch-all Segments'
+
 ## 1.2.1
 
 ### Patch Changes
