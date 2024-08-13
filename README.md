@@ -8,6 +8,10 @@ A custom React hook to retrieve placeholder paths in Next.js App Router.
 
 Next.js 13+ App Router doesn't provide a built-in method to return the path of placeholder values, unlike `router.pathname` in Pages Router. This hook fills that gap, allowing you to get the placeholder path in the App Router, similar to how you would in the Pages Router.
 
+### Easing the Transition from Pages Router
+
+For developers migrating from Pages Router to App Router, this hook can significantly reduce the pain points associated with the transition. It provides a familiar way to access placeholder paths, making it easier to port existing code and maintain consistency in your application's routing logic. By offering functionality similar to `router.pathname`, `usePlaceholderPath` helps bridge the gap between the two routing systems, allowing for a smoother migration process and reducing the need for extensive refactoring of route-dependent code.
+
 ## Installation
 
 ```bash
