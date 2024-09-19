@@ -24,7 +24,7 @@ pnpm add @sect/use-placeholder-path
 
 ## Usage
 
-```typescript
+```tsx
 'use client';
 
 import usePlaceholderPath from '@sect/use-placeholder-path';
@@ -57,10 +57,14 @@ interface UsePlaceholderPathOptions {
 ## Examples
 
 1. Route: `/users/123/posts/456`
-  - Result: `/users/[userId]/posts/[postId]`
-
-2. Catch-all route: `/blog/2024/08/15`
-  - Result: `/blog/[...slug]`
+    - Result: `/users/[userId]/posts/[postId]`
+2. Catch-all Segments Route: `/blog/2024/08/15`
+    - Result: `/blog/[...slug]`
+3. Optional Catch-all Segments Route: `/shop/a/b/c`
+    - Result: `/shop/[[...slug]]`
+    
+> [!NOTE]
+> For Top-Level Optional Catch-all Segments, special handling may be required. See the **"Known Issues"** section for more details.
 
 ## Notes
 
