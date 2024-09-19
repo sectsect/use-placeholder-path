@@ -1,5 +1,14 @@
 # @sect/use-placeholder-path
 
+## 1.3.2
+
+### Patch Changes
+
+- [#25](https://github.com/sectsect/use-placeholder-path/pull/25) [`9d0d08f`](https://github.com/sectsect/use-placeholder-path/commit/9d0d08f452ffe0351af567f66084e0892c5dab06) Thanks [@sectsect](https://github.com/sectsect)! - .
+
+  - docs: update README.md
+  - fix: fix security vulnerabilities
+
 ## 1.3.1
 
 ### Patch Changes
