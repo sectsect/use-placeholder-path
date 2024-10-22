@@ -39,6 +39,14 @@ describe('usePlaceholderPath', () => {
     expect(result.current).toBe('/users/[userId]/posts/[postId]');
   });
 
+  test('should handle undefined parameter values', () => {
+    vi.mocked(usePathname).mockReturnValue('/users/123/posts');
+    vi.mocked(useParams).mockReturnValue({ userId: '123', postId: undefined });
+
+    const { result } = renderHook(() => usePlaceholderPath());
+    expect(result.current).toBe('/users/[userId]/posts');
+  });
+
   test('should handle catch-all routes', () => {
     vi.mocked(usePathname).mockReturnValue('/blog/2023/03/15');
     vi.mocked(useParams).mockReturnValue({ slug: ['2023', '03', '15'] });

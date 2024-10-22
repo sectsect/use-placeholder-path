@@ -34,11 +34,13 @@ const getPlaceholder = (key: string, value: string | string[]): string => {
  */
 const replaceDynamicSegments = (
   segments: string[],
-  params: Record<string, string | string[]>,
+  params: Record<string, string | string[] | undefined>,
 ): string[] => {
   const newSegments = [...segments];
 
   Object.entries(params).forEach(([key, value]) => {
+    if (value === undefined) return;
+
     const placeholder = getPlaceholder(key, value);
     const values = Array.isArray(value) ? value : [value];
     const decodedValues = values.map(decodeURIComponent);
