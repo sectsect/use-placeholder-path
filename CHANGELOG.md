@@ -1,5 +1,13 @@
 # @sect/use-placeholder-path
 
+## 1.3.4
+
+### Patch Changes
+
+- [#29](https://github.com/sectsect/use-placeholder-path/pull/29) [`224b130`](https://github.com/sectsect/use-placeholder-path/commit/224b130a06af554798e1f1afda9c0505e947cf27) Thanks [@sectsect](https://github.com/sectsect)! - .
+
+  - fix: fix bug with wrong type for useParams()
+
 ## 1.3.3
 
 ### Patch Changes
