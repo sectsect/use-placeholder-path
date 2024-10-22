@@ -1,5 +1,13 @@
 # @sect/use-placeholder-path
 
+## 1.4.1
+
+### Patch Changes
+
+- [#33](https://github.com/sectsect/use-placeholder-path/pull/33) [`7fac103`](https://github.com/sectsect/use-placeholder-path/commit/7fac103ab75f834767b9f812e469ed055f2b89a1) Thanks [@sectsect](https://github.com/sectsect)! - .
+
+  - fix: fix version for peerDependencies
+
 ## 1.4.0
 
 ### Minor Changes
