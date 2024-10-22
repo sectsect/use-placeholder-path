@@ -1,5 +1,13 @@
 # @sect/use-placeholder-path
 
+## 1.4.0
+
+### Minor Changes
+
+- [#31](https://github.com/sectsect/use-placeholder-path/pull/31) [`c75fe39`](https://github.com/sectsect/use-placeholder-path/commit/c75fe39a3b030221f0c2f17bcd9fcb5be14da79b) Thanks [@sectsect](https://github.com/sectsect)! - .
+
+  - chore(deps): add support for nextjs 15
+
 ## 1.3.4
 
 ### Patch Changes
