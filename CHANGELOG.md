@@ -1,5 +1,15 @@
 # @sect/use-placeholder-path
 
+## 1.4.2
+
+### Patch Changes
+
+- [#35](https://github.com/sectsect/use-placeholder-path/pull/35) [`2fc7d49`](https://github.com/sectsect/use-placeholder-path/commit/2fc7d4981796bc46ed91edebb572a83f2585e0c2) Thanks [@sectsect](https://github.com/sectsect)! - .
+
+  - fix: fix security vulnerabilities
+  - chore(deps): update dependencies
+  - chore(deps): add React 19 support and update dependencies
+
 ## 1.4.1
 
 ### Patch Changes
