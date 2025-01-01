@@ -1,5 +1,13 @@
 # @sect/use-placeholder-path
 
+## 1.4.4
+
+### Patch Changes
+
+- [#41](https://github.com/sectsect/use-placeholder-path/pull/41) [`14dbf68`](https://github.com/sectsect/use-placeholder-path/commit/14dbf6839828bf5c2a14a425a4775c9e2a38d565) Thanks [@sectsect](https://github.com/sectsect)! - .
+
+  - chore(deps): update dependencies
+
 ## 1.4.3
 
 ### Patch Changes
