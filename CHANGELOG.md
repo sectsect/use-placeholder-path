@@ -1,5 +1,13 @@
 # @sect/use-placeholder-path
 
+## 1.4.3
+
+### Patch Changes
+
+- [#37](https://github.com/sectsect/use-placeholder-path/pull/37) [`a45f6fd`](https://github.com/sectsect/use-placeholder-path/commit/a45f6fdc040ac18496e856d14b4aaf30ae434088) Thanks [@sectsect](https://github.com/sectsect)! - .
+
+  - ci(deps): update codecov/codecov-action action to v5
+
 ## 1.4.2
 
 ### Patch Changes
