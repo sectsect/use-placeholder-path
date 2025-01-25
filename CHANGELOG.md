@@ -1,5 +1,15 @@
 # @sect/use-placeholder-path
 
+## 1.4.5
+
+### Patch Changes
+
+- [`9357ac8`](https://github.com/sectsect/use-placeholder-path/commit/9357ac8049818a598412c07634d6891488ac4984) Thanks [@sectsect](https://github.com/sectsect)! - .
+
+  - chore(deps): bump vite from 5.4.6 to 5.4.14
+  - chore(deps): migrate to Vitest 3.0
+  - chore(deps): update dependencies
+
 ## 1.4.4
 
 ### Patch Changes
