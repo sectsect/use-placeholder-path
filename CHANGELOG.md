@@ -1,5 +1,14 @@
 # @sect/use-placeholder-path
 
+## 1.4.6
+
+### Patch Changes
+
+- [`6872688`](https://github.com/sectsect/use-placeholder-path/commit/6872688fc2514b5070156d864d4ee4b9a935a042) Thanks [@sectsect](https://github.com/sectsect)! - .
+
+  - chore(deps): update dependencies
+  - fix: fix security vulnerabilities
+
 ## 1.4.5
 
 ### Patch Changes
