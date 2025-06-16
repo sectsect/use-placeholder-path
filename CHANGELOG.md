@@ -1,5 +1,14 @@
 # @sect/use-placeholder-path
 
+## 1.4.7
+
+### Patch Changes
+
+- [`c2ef290`](https://github.com/sectsect/use-placeholder-path/commit/c2ef2902b3d76163f78a6ed92adc4f23d40fd289) Thanks [@sectsect](https://github.com/sectsect)! - .
+
+  - chore(deps): update dependencies
+  - chore: migrate ESLint config to flat config
+
 ## 1.4.6
 
 ### Patch Changes
