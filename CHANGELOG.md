@@ -1,5 +1,16 @@
 # @sect/use-placeholder-path
 
+## 1.5.0
+
+### Minor Changes
+
+- [`221da07`](https://github.com/sectsect/use-placeholder-path/commit/221da0766a454db6170cfec32857ebef9622811e) Thanks [@sectsect](https://github.com/sectsect)! - .
+  - chore: remove unwanted package
+  - chore(deps): update dependencies
+  - fix: fix security vulnerabilities
+  - test: add vitest ui support
+  - docs: update README.md
+
 ## 1.4.8
 
 ### Patch Changes
