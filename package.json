@@ -19,6 +19,7 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",
+    "secretlint": "secretlint --maskSecrets --secretlintignore .gitignore '**/*'",
     "prepare": "husky",
     "changeset": "changeset",
     "release": "npm run build && changeset publish"
