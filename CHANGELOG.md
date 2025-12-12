@@ -1,5 +1,12 @@
 # @sect/use-placeholder-path
 
+## 1.5.1
+
+### Patch Changes
+
+- [#56](https://github.com/sectsect/use-placeholder-path/pull/56) [`10c0aba`](https://github.com/sectsect/use-placeholder-path/commit/10c0aba3df7fe65a64bec21a6590a720da4c8cdf) Thanks [@sectsect](https://github.com/sectsect)! - .
+  - fix(deps): update Next.js and React to address critical security vulnerabilities
+
 ## 1.5.0
 
 ### Minor Changes
