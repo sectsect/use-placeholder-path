@@ -1,5 +1,12 @@
 # @sect/use-placeholder-path
 
+## 1.5.2
+
+### Patch Changes
+
+- [#58](https://github.com/sectsect/use-placeholder-path/pull/58) [`4e424e5`](https://github.com/sectsect/use-placeholder-path/commit/4e424e5450678f83633b3f0899815dd89d983a12) Thanks [@sectsect](https://github.com/sectsect)! - .
+  - fix: fix security vulnerabilities
+
 ## 1.5.1
 
 ### Patch Changes
