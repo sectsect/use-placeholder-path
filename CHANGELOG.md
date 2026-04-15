@@ -1,5 +1,12 @@
 # @sect/use-placeholder-path
 
+## 1.6.0
+
+### Minor Changes
+
+- [#60](https://github.com/sectsect/use-placeholder-path/pull/60) [`cab16ba`](https://github.com/sectsect/use-placeholder-path/commit/cab16bac3a36bfab790eb2791b171cad7de6e6c8) Thanks [@sectsect](https://github.com/sectsect)! - .
+  build(deps): add next 16 to peer dependencies
+
 ## 1.5.2
 
 ### Patch Changes
