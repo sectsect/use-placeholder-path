@@ -28,7 +28,6 @@
   },
   "css.validate": false,
   "scss.validate": false,
-  "eslint.useFlatConfig": true,
   "workbench.editor.customLabels.patterns": {
     "**/app/**/page.tsx": "${dirname} - Page",
     "**/app/**/layout.tsx": "${dirname} - Layout",

@@ -76,16 +76,12 @@ npm run prepare          # Setup husky git hooks
 
 ## Code Quality
 
-- **ESLint Config**: Modern flat config format (`eslint.config.mjs`) with comprehensive rule set:
-  - Airbnb TypeScript base configuration
-  - React, React Hooks, and JSX a11y rules
-  - TypeScript strict rules (no explicit any, consistent type imports)
-  - Import organization and unused import removal
-  - Testing-specific rules for Vitest
-  - TSDoc documentation validation
-- **Git Hooks**: Husky with commitlint for conventional commits
-- **Prettier**: Integrated with ESLint for consistent code formatting
-- **Testing Standards**: 
+- **Biome Config**: `biome.jsonc` (v2.4.13) unifies linter and formatter in a single tool:
+  - Recommended linter rules with project-specific overrides
+  - Import organization via Biome's assist actions
+  - Formatter replacing Prettier (2-space indent, single quotes, trailing commas)
+- **Git Hooks**: Husky runs `lint-staged` (Biome + type-check + secretlint) on pre-commit; commitlint on commit-msg
+- **Testing Standards**:
   - Use `test` not `it` for test naming
   - Require top-level describe blocks (max 2)
   - Comprehensive test coverage for all code paths
