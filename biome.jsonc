@@ -1,0 +1,208 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.4.13/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": true,
+    "includes": [
+      "**",
+      "!dist",
+      "!out",
+      "!build",
+      "!node_modules",
+      "!playwright-report",
+      "!coverage",
+      "!.next",
+      "!.storybook",
+      "!vendor",
+      "!public",
+      "!next-env.d.ts"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "suspicious": {
+        "noImportCycles": "error",
+        "noUnknownAtRules": {
+          "options": {
+            "ignore": ["@custom-media", "@custom-selector"]
+          }
+        },
+        "noConsole": {
+          "level": "warn",
+          "options": {
+            "allow": ["warn", "error"]
+          }
+        },
+        "noEvolvingTypes": "error",
+        "noDebugger": "error",
+        "noDoubleEquals": "error",
+        "noRedeclare": "error",
+        "noAssignInExpressions": "warn",
+        "noUnassignedVariables": "error",
+        "noThenProperty": "error",
+        "noFunctionAssign": "error",
+        "noGlobalAssign": "error",
+        "noImportAssign": "error",
+        "noSelfCompare": "error",
+        "noMisleadingInstantiator": "error"
+      },
+      "nursery": {
+        "noUnnecessaryConditions": "error",
+        // "noFloatingPromises": "error",
+        // "noLeakedRender": "error",
+        // "noMisusedPromises": "error",
+        "noNestedPromises": "error",
+        "noShadow": "warn",
+        "useFind": "error",
+        "useArraySortCompare": "error",
+        "useAwaitThenable": "error",
+        "useErrorCause": "warn",
+        "noUselessReturn": {
+          "level": "error",
+          "fix": "safe"
+        },
+        // "noUselessUndefined": {
+        //   "level": "error",
+        //   "fix": "safe"
+        // },
+        "useSortedClasses": {
+          "fix": "safe",
+          "level": "error",
+          "options": {
+            "functions": ["twMerge", "tailwindClass", "cn"]
+          }
+        },
+        "noReturnAssign": "error",
+        "useExhaustiveSwitchCases": "warn",
+        "useNullishCoalescing": "warn",
+        "useSpread": "warn"
+      },
+      "style": {
+        "useConsistentArrayType": "error",
+        "useNamingConvention": {
+          "level": "error",
+          "options": {
+            "strictCase": false,
+            "conventions": [
+              {
+                "selector": {
+                  "kind": "function"
+                },
+                "formats": ["camelCase", "CONSTANT_CASE"]
+              },
+              {
+                "selector": {
+                  "kind": "variable"
+                },
+                "formats": ["camelCase", "PascalCase", "CONSTANT_CASE"]
+              },
+              {
+                "selector": {
+                  "kind": "objectLiteralProperty"
+                },
+                "match": "_*(.+)",
+                "formats": [
+                  "camelCase",
+                  "PascalCase",
+                  "CONSTANT_CASE",
+                  "snake_case"
+                ]
+              },
+              {
+                "selector": {
+                  "kind": "typeProperty"
+                },
+                "match": "_*(.+)",
+                "formats": ["camelCase", "PascalCase", "snake_case"]
+              },
+              {
+                "selector": {
+                  "kind": "typeLike"
+                },
+                "formats": ["PascalCase"]
+              }
+            ]
+          }
+        },
+        "noNestedTernary": "error",
+        "noYodaExpression": "error",
+        "useShorthandAssign": "error",
+        "useForOf": "warn",
+        // "useFilenamingConvention": "warn"
+        "noUselessElse": "warn",
+        "useCollapsedElseIf": "warn",
+        "useDefaultParameterLast": "warn"
+      },
+      "complexity": {
+        "useSimplifiedLogicExpression": "error",
+        "noExcessiveCognitiveComplexity": {
+          "level": "warn",
+          "options": {
+            "maxAllowedComplexity": 20
+          }
+        }
+      },
+      "security": {
+        "noSecrets": {
+          "level": "error",
+          "options": {
+            "entropyThreshold": 60
+          }
+        },
+        "noDangerouslySetInnerHtml": "off"
+      }
+    },
+    "domains": {
+      "next": "recommended",
+      "react": "recommended"
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "arrowParentheses": "asNeeded",
+      "trailingCommas": "all"
+    }
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true,
+      "cssModules": true
+    },
+    "formatter": {
+      "enabled": true,
+      "quoteStyle": "single"
+    }
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              { "type": false, "source": ["react", "react-dom", "react/**"] },
+              ":BLANK_LINE:",
+              { "type": false, "source": ":PACKAGE:" },
+              ":BLANK_LINE:",
+              { "type": false, "source": ":PATH:" },
+              ":BLANK_LINE:",
+              { "type": true }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
