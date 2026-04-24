@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
-import { usePathname, useParams } from 'next/navigation';
-import { describe, expect, vi, beforeEach } from 'vitest';
+import { useParams, usePathname } from 'next/navigation';
+import { beforeEach, describe, expect, vi } from 'vitest';
 
 import usePlaceholderPath from '../index';
 
@@ -103,6 +103,7 @@ describe('usePlaceholderPath', () => {
   test('should handle optional catch-all segments with one value', () => {
     vi.mocked(usePathname).mockReturnValue('/shop/category');
     vi.mocked(useParams).mockReturnValue({
+      // biome-ignore lint/style/useNamingConvention: library internal prefix (see getPlaceholder in src/index.ts) is part of the public API contract for optional catch-all routes
       __OPTIONAL_CATCH_ALL__slug: ['category'],
     });
 
@@ -113,6 +114,7 @@ describe('usePlaceholderPath', () => {
   test('should handle optional catch-all segments with two values', () => {
     vi.mocked(usePathname).mockReturnValue('/shop/category/product');
     vi.mocked(useParams).mockReturnValue({
+      // biome-ignore lint/style/useNamingConvention: library internal prefix (see getPlaceholder in src/index.ts) is part of the public API contract for optional catch-all routes
       __OPTIONAL_CATCH_ALL__slug: ['category', 'product'],
     });
 
@@ -123,6 +125,7 @@ describe('usePlaceholderPath', () => {
   test('should handle optional catch-all segments with three values', () => {
     vi.mocked(usePathname).mockReturnValue('/shop/category/product/variant');
     vi.mocked(useParams).mockReturnValue({
+      // biome-ignore lint/style/useNamingConvention: library internal prefix (see getPlaceholder in src/index.ts) is part of the public API contract for optional catch-all routes
       __OPTIONAL_CATCH_ALL__slug: ['category', 'product', 'variant'],
     });
 

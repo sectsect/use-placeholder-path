@@ -1,4 +1,4 @@
-import { usePathname, useParams } from 'next/navigation';
+import { useParams, usePathname } from 'next/navigation';
 
 interface UsePlaceholderPathOptions {
   optionalCatchAllSegments?: string;
@@ -80,7 +80,8 @@ const usePlaceholderPath = (options: UsePlaceholderPathOptions = {}) => {
 
   // Handle top-level optional catch-all segments
   if (isTopLevelOptionalCatchAll) {
-    const catchAllSegment = optionalCatchAllSegments || 'slug'; // Use 'slug' as default if empty string
+    // biome-ignore lint/nursery/useNullishCoalescing: intentional `||` to treat empty string as missing and fall back to 'slug'
+    const catchAllSegment = optionalCatchAllSegments || 'slug';
     return `/${segments[0]}/[[...${catchAllSegment}]]`;
   }
 

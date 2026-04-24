@@ -2,29 +2,28 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable import/no-anonymous-default-export */
 
+import { FlatCompat } from '@eslint/eslintrc';
 // ESLint core and compatibility utilities
 import js from '@eslint/js';
-import { FlatCompat } from '@eslint/eslintrc';
-// import { fixupPluginRules } from '@eslint/compat';
-import globals from 'globals';
-
+// import nextPlugin from '@next/eslint-plugin-next';
+import pluginQuery from '@tanstack/eslint-plugin-query';
+import typescriptEslint from '@typescript-eslint/eslint-plugin';
+import vitest from '@vitest/eslint-plugin';
+import deprecation from 'eslint-plugin-deprecation';
+import _import from 'eslint-plugin-import';
+import jsxA11Y from 'eslint-plugin-jsx-a11y';
+import prettier from 'eslint-plugin-prettier';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 // ESLint plugins for various technologies and best practices
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
-import jsxA11Y from 'eslint-plugin-jsx-a11y';
-import typescriptEslint from '@typescript-eslint/eslint-plugin';
+import tailwindcss from 'eslint-plugin-tailwindcss';
+import testingLibrary from 'eslint-plugin-testing-library';
+import tsdoc from 'eslint-plugin-tsdoc';
 // import tseslint from 'typescript-eslint';
 import unusedImports from 'eslint-plugin-unused-imports';
-import tailwindcss from 'eslint-plugin-tailwindcss';
-import tsdoc from 'eslint-plugin-tsdoc';
-import _import from 'eslint-plugin-import';
-import prettier from 'eslint-plugin-prettier';
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
-import testingLibrary from 'eslint-plugin-testing-library';
-import vitest from '@vitest/eslint-plugin';
-import deprecation from 'eslint-plugin-deprecation';
-// import nextPlugin from '@next/eslint-plugin-next';
-import pluginQuery from '@tanstack/eslint-plugin-query';
+// import { fixupPluginRules } from '@eslint/compat';
+import globals from 'globals';
 
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname, // Added in: v21.2.0, v20.11.0 @ https://nodejs.org/api/esm.html#importmetadirname
