@@ -1,5 +1,13 @@
 # @sect/use-placeholder-path
 
+## 1.6.1
+
+### Patch Changes
+
+- [#62](https://github.com/sectsect/use-placeholder-path/pull/62) [`ebad71f`](https://github.com/sectsect/use-placeholder-path/commit/ebad71f58a0a9a5ecbcb2130bebecd5a295cd6e9) Thanks [@sectsect](https://github.com/sectsect)! - .
+
+  - chore(lint): migrate from ESLint/Prettier to Biome
+
 ## 1.6.0
 
 ### Minor Changes
