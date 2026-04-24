@@ -1,2 +1,2 @@
-# Disable concurent to run build-types after ESLint in lint-staged
+# Disable concurrent to run type-check after Biome in lint-staged
 npx lint-staged --concurrent false

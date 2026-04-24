@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 /// <reference types="vitest" />
 import react from '@vitejs/plugin-react';
 import magicalSvg from 'vite-plugin-magical-svg';
